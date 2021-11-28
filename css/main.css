@@ -9,6 +9,12 @@ body {
   background-color: #43fefb;
 }
 
+@media (min-width: 800px) {
+  body {
+    background-color: #343434;
+  }
+}
+
 body #background {
   -webkit-clip-path: polygon(100% 0, 100% 30%, 30% 100%, 0 100%, 0 0);
           clip-path: polygon(100% 0, 100% 30%, 30% 100%, 0 100%, 0 0);
@@ -19,12 +25,32 @@ body #background {
   z-index: -1;
 }
 
+@media (min-width: 800px) {
+  body #background {
+    background: #95483f;
+    background-image: -webkit-gradient(linear, left top, right top, from(#000004), color-stop(#160b39), color-stop(#420a68), color-stop(#6a176e), color-stop(#932667), color-stop(#ba3655), color-stop(#dd513a), color-stop(#f3761b), color-stop(#fca50a), color-stop(#f6d746), to(#f6d746));
+    background-image: linear-gradient(90deg, #000004, #160b39, #420a68, #6a176e, #932667, #ba3655, #dd513a, #f3761b, #fca50a, #f6d746, #f6d746);
+    -webkit-clip-path: ellipse(50% 100% at 30% 50%);
+            clip-path: ellipse(50% 100% at 30% 50%);
+  }
+}
+
 body header a {
   color: #ffffff;
   text-decoration: none;
   padding: 15px;
   display: block;
   text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  main {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 50% auto;
+        grid-template-columns: 50% auto;
+        grid-template-areas: "card primary";
+  }
 }
 
 main section#card {
@@ -35,6 +61,19 @@ main section#card {
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
           box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   width: 80%;
+}
+
+@media (min-width: 800px) {
+  main section#card {
+    grid-area: card;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
+    margin: 1em;
+  }
 }
 
 main section#card ul {
@@ -57,10 +96,26 @@ main section#primary {
   text-align: center;
 }
 
+@media (min-width: 800px) {
+  main section#primary {
+    grid-area: primary;
+    text-align: left;
+    margin: 4em 0 0 4em;
+  }
+}
+
 main section#primary h1 {
   font-size: 3em;
   margin-top: 10px;
   text-transform: uppercase;
+}
+
+@media (min-width: 800px) {
+  main section#primary h1 {
+    width: 30%;
+    font-size: 4em;
+    line-height: 0.9em;
+  }
 }
 
 main section#primary p {
@@ -76,5 +131,12 @@ main section#primary a {
   padding: 15px;
   font-weight: bold;
   text-align: center;
+}
+
+@media (min-width: 800px) {
+  main section#primary a {
+    display: inline-block;
+    padding: 15px 60px;
+  }
 }
 /*# sourceMappingURL=main.css.map */
