@@ -1,8 +1,24 @@
 $colors: (
-  primary: #83b0ff,
-  secondery: #fff6bb,
+  primary: #43fefb,
+  secondery: #00a7a4,
 );
 
+body,
+html {
+  height: 100%;
+}
+
 body {
-  background-color: map-get($colors, primary);
+  font-family: "Poppins";
+  margin: 0;
+  background-color: map-get($map: $colors, $key: primary);
+  #background {
+    clip-path: polygon(100% 0, 100% 30%, 30% 100%, 0 100%, 0 0);
+    // background-color: map-get($colors, primary);
+    background-color: map-get($map: $colors, $key: secondery);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1;
+  }
 }
