@@ -3,6 +3,10 @@ $colors: (
   secondery: #00a7a4,
 );
 
+@function color($color-name) {
+  @return map-get($map: $colors, $key: $color-name);
+}
+
 body,
 html {
   height: 100%;
@@ -15,7 +19,7 @@ body {
   #background {
     clip-path: polygon(100% 0, 100% 30%, 30% 100%, 0 100%, 0 0);
     // background-color: map-get($colors, primary);
-    background-color: map-get($map: $colors, $key: secondery);
+    background-color: color(secondery);
     width: 100%;
     height: 100%;
     position: absolute;
